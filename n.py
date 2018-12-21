@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
-import Node
-import Graph
+from node import Node
+from graph import Graph
 
 
 
@@ -17,7 +17,20 @@ def get_content(file):
 
 def main():
     cities = get_content(sys.argv[1])
-    print(cities)
+    nodes = [Node(city) for city in cities]
+
+    graph = Graph()
+    graph.set_nodes(nodes)
+    path = graph.find_path()
+    display = []
+    for node in path:
+        display.append(node.get_name())
+
+
+    graph.nodes = 'fsdf'
+    print(display)
+    # print(cities)
+
     # for city in cites:
     #     city = Node()
     # graph = Graph(cities)
