@@ -32,6 +32,11 @@ class Graph:
         return path
 
     def total_distance(self, path):
-
-
         pass
+
+    def print_result(self):
+        path = self.find_path()
+        display = []
+        for node in path:
+            display.append(node.get_name())
+        print(display)

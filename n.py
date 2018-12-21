@@ -14,21 +14,19 @@ def get_content(file):
         cities.append([line[0], float(line[1]), float(line[2])])
     return cities
 
-
-def main():
-    cities = get_content(sys.argv[1])
-    nodes = [Node(city) for city in cities]
-
+def set_graph(nodes):
     graph = Graph()
     graph.set_nodes(nodes)
-    path = graph.find_path()
-    display = []
-    for node in path:
-        display.append(node.get_name())
+    graph.print_result()
 
 
-    graph.nodes = 'fsdf'
-    print(display)
+def main():
+    
+    cities = get_content(sys.argv[1])
+    nodes = [Node(city) for city in cities]
+    set_graph(nodes)
+
+
     # print(cities)
 
     # for city in cites:

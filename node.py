@@ -7,6 +7,5 @@ class Node:
     def get_name(self):
         return self.__name
 
-
     def get_position(self):
         return self.__node_position
