@@ -2,7 +2,7 @@
 import sys
 from node import Node
 from graph import Graph
-
+from timeit import default_timer
 
 
 def get_content(file):
@@ -21,12 +21,13 @@ def set_graph(nodes):
 
 
 def main():
-    
+    start = default_timer()
     cities = get_content(sys.argv[1])
     nodes = [Node(city) for city in cities]
     set_graph(nodes)
-
-
+    end = default_timer()
+    _time = end - start
+    print("And it took {}s to find this!".format(_time))
     # print(cities)
 
     # for city in cites:

@@ -11,7 +11,7 @@ class Graph:
 
     def get_nodes(self):
         return self.__nodes
-
+nlp
 
     def distance(self, node1, node2):
         pos1 = node1.get_position()
@@ -32,7 +32,10 @@ class Graph:
         return path
 
     def total_distance(self, path):
-        pass
+        total_distance = 0
+        for i, node in enumerate(path[:-1]):
+            total_distance += self.distance(node, path[i + 1])
+        return total_distance
 
     def print_result(self):
         path = self.find_path()
@@ -40,3 +43,4 @@ class Graph:
         for node in path:
             display.append(node.get_name())
         print(display)
+        print("This covers {} km.".format(self.total_distance(path)))
