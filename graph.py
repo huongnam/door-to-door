@@ -11,7 +11,9 @@ class Graph:
 
     def get_nodes(self):
         return self.__nodes
-nlp
+
+    
+
 
     def distance(self, node1, node2):
         pos1 = node1.get_position()
