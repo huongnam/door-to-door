@@ -12,7 +12,7 @@ class Graph:
     def get_nodes(self):
         return self.__nodes
 
-    
+
 
 
     def distance(self, node1, node2):
@@ -45,4 +45,5 @@ class Graph:
         for node in path:
             display.append(node.get_name())
         print(display)
-        print("This covers {} km.".format(self.total_distance(path)))
+        print("This covers {} khong phai km.".format(self.total_distance(path)))
+        print(len(path))
