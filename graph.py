@@ -57,7 +57,7 @@ class Graph:
         return total_distance
 
 
-    @staticmethod
+    # @staticmethod
 
     def find_path(self):
         return "haha"
@@ -70,6 +70,20 @@ class Graph:
         print(display)
         print("This covers {} khong phai km.".format(self.total_distance(path)))
         print(len(path))
+
+
+    def rewrite_list(self):
+        path = self.find_path()
+        new_list = []
+        for node in path:
+            print(node)
+            # try:
+            #     new_list.append(node.get_name() + ", " + str(node.get_position()[0]) + ", " + str(node.get_position()[1]) + "\n")
+            # except IndexError:
+            #     print("index")
+        return new_list
+
+
 
 
 class NearestNeighbor(Graph):
@@ -104,6 +118,7 @@ class TwoOpt(Graph):
             for i in range(1, len(temp)-2):
                 for j in range(i+1, len(temp)):
                     if j-i == 1: continue # changes nothing, skip then
+                    # creates a shallow copy of temp
                     new_path = temp[:]
                     new_path[i:j] = temp[j-1:i-1:-1] # this is the 2woptSwap
                     total_distance = self.total_distance(best)
